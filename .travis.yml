@@ -16,8 +16,18 @@ matrix:
   include:
   - env: OPTIONS= GET_WIN=
     compiler: clang
+    arch: amd64
   - env: OPTIONS=--disable-threads GET_WIN=
     compiler: clang
+    arch: amd64
+  
+  - env: OPTIONS= GET_WIN=
+    compiler: clang
+    arch: ppc64le
+  - env: OPTIONS=--disable-threads GET_WIN=
+    compiler: clang
+    arch: ppc64le
+    
 before_script:
 - test "x$GET_WIN" = x || wget -O- https://storage.googleapis.com/pandaseq/pandaseq-windeps.tar.bz2
   | tar xj
